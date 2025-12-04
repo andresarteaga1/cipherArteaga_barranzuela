@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrador Táctico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Cifrador de Texto Táctico</h1>
+            <p>Cifra y descifra tus mensajes con métodos seguros</p>
+        </header>
+
+        <section class="controls">
+            <div class="control-group">
+                <label for="cifrado-metodo">Método de Cifrado:</label>
+                <select id="cifrado-metodo">
+                    <option>César (Desplazamiento)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="cifrado-modo">Modo:</label>
+                <div class="mode-buttons">
+                    <button class="mode-btn active">Cifrar</button>
+                    <button class="mode-btn">Descifrar</button>
+                </div>
+            </div>
+
+            <div class="control-group displacement-group">
+                <label for="desplazamiento">Desplazamiento: 3</label>
+                <input type="range" id="desplazamiento" min="0" max="25" value="3">
+            </div>
+        </section>
+
+        <section class="text-panels">
+            <div class="text-panel">
+                <h3>Texto Original (Entrada)</h3>
+                <textarea id="texto-entrada" placeholder="Ingresa el texto aquí"></textarea>
+            </div>
+
+            <div class="text-panel">
+                <h3>Texto Procesado (Salida)</h3>
+                <textarea id="texto-salida" readonly placeholder="El resultado aparecerá aquí"></textarea>
+                <div class="panel-actions">
+                    <button id="btn-copiar" title="Copiar">Copiar</button>
+                    <button id="btn-intercambiar" title="Intercambiar">Intercambiar</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="action-button-container">
+            <button id="btn-accion" class="main-action-btn">Cifrar</button>
+        </div>
+
+        <footer class="methods-info">
+            <h2>Métodos de Cifrado:</h2>
+            <p><strong>César:</strong> Desplaza cada letra del alfabeto por un número fijo de posiciones</p>
+        </footer>
+    </div>
+    <script src="../src/src/cipher.js" type="module"></script>
+    <script src="../src/src/index.js" type="module"></script>
+</body>
+</html>
